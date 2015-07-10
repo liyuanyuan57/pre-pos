@@ -2,22 +2,22 @@ function getNum(item){
   var value = item.replace(/[^0-9]/ig,'');
   return parseInt(value, 10);
 }
-function findsameItem(itemA, arr){
-  for (var n = 0; n < arr.length; n++) {
-    if (itemA[0] === arr[n].name){
-      if(itemA.length == 1){
-        arr[n].summary++;
+function findsameItem(itemCollection, newCollection){
+  for (var n = 0; n < newCollection.length; n++) {
+    if (itemCollection[0] === newCollection[n].name){
+      if(itemCollection.length == 1){
+        newCollection[n].summary++;
       } else {
-        arr[n].summary += getNum(itemA);
+        newCollection[n].summary += getNum(itemCollection);
       }
 
       return;
     }
   }
-  if(itemA.length == 1){
-    arr.push({name: itemA[0], summary: 1});
+  if(itemCollection.length == 1){
+    newCollection.push({name: itemCollection[0], summary: 1});
   } else {
-    arr.push({name: itemA[0], summary: getNum(itemA)});
+    newCollection.push({name: itemCollection[0], summary: getNum(itemCollection)});
   }
 }
 function count_same_elements(collection){

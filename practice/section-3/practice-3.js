@@ -1,29 +1,29 @@
-function CollectionC(item_a, arr)
+function createCollectionC(itemA, newCollection)
 {
-  for(var y = 0; y < arr.length; y++){
-    if(item_a === arr[y].key){
-      arr[y].count++;
+  for(var y = 0; y < newCollection.length; y++){
+    if(itemA === newCollection[y].key){
+      newCollection[y].count++;
       return;
     }
   }
 
-  arr.push({key: item_a, count:1})
-  return arr;
+  newCollection.push({key: itemA, count:1})
+  return newCollection;
 }
-function findSameItem(itemA, object){
+function findSameItem(itemCollection, object){
   for(var n = 0; n < object.value.length; n++){
-    if(itemA.key === object.value[n]){
-       itemA.count -= parseInt(itemA.count / 3);
+    if(itemCollection.key === object.value[n]){
+       itemCollection.count -= parseInt(itemCollection.count / 3, 10);
     }
   }
 
-  return itemA;
+  return itemCollection;
 }
 function create_updated_collection(collection_a, object_b) {
   var collection_c = [];
   var result = [];
   for(var m = 0; m < collection_a.length; m++){
-         CollectionC(collection_a[m], collection_c);
+         createCollectionC(collection_a[m], collection_c);
   }
   for(var x = 0; x < collection_c.length; x++){
      result.push(findSameItem(collection_c[x], object_b));

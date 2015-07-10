@@ -3,23 +3,23 @@ function getNum(item) {
   return parseInt(value, 10);
 }
 
-function findSameItem(itemA, arr) {
-  for (var n = 0; n < arr.length; n++) {
-    if (itemA[0] === arr[n].key){
-      if(itemA.length == 1){
-         arr[n].count++;
+function findSameItem(itemCollection, newCollection) {
+  for (var n = 0; n < newCollection.length; n++) {
+    if (itemCollection[0] === newCollection[n].key){
+      if(itemCollection.length == 1){
+         newCollection[n].count++;
        } else {
-       arr[n].count = getNum(itemA);
+       newCollection[n].count = getNum(itemCollection);
       }
 
       return;
     }
    }
 
-   if(itemA.length == 1) {
-     arr.push({key: itemA[0], count: 1});
+   if(itemCollection.length == 1) {
+     newCollection.push({key: itemCollection[0], count: 1});
     } else {
-        arr.push({key: itemA[0], count: getNum(itemA)});
+        newCollection.push({key: itemCollection[0], count: getNum(itemCollection)});
     }
 }
 

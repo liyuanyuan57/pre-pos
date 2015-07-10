@@ -1,11 +1,11 @@
-function findSameItem(itemA, arr) {
-   for (var n = 0; n < arr.length; n++) {
-     if (itemA === arr[n].key) {
-        arr[n].count++;
+function findSameItem(itemCollection, newCollection) {
+   for (var n = 0; n < newCollection.length; n++) {
+     if (itemCollection === newCollection[n].key) {
+        newCollection[n].count++;
         return;
       }
    }
-   arr.push({key: itemA, count: 1});
+   newCollection.push({key: itemCollection, count: 1});
 }
 
 function count_same_elements(collection){

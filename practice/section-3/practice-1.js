@@ -1,10 +1,10 @@
-function findSameItem(itemA, object){
+function findSameItem(itemCollection, object){
   for(var n = 0; n < object.value.length; n++){
-    if(itemA.key === object.value[n])
-       itemA.count--;
+    if(itemCollection.key === object.value[n])
+       itemCollection.count--;
   }
 
-  return itemA;
+  return itemCollection;
 }
 function create_updated_collection(collection_a, object_b) {
   var result = [];
